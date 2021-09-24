@@ -254,16 +254,16 @@ func (BlockInventory_Type) EnumDescriptor() ([]byte, []int) {
 type Inventory_InventoryType int32
 
 const (
-	Inventory_TRX   Inventory_InventoryType = 0
+	Inventory_SYM   Inventory_InventoryType = 0
 	Inventory_BLOCK Inventory_InventoryType = 1
 )
 
 var Inventory_InventoryType_name = map[int32]string{
-	0: "TRX",
+	0: "SYM",
 	1: "BLOCK",
 }
 var Inventory_InventoryType_value = map[string]int32{
-	"TRX":   0,
+	"SYM":   0,
 	"BLOCK": 1,
 }
 
@@ -278,20 +278,20 @@ type Items_ItemType int32
 
 const (
 	Items_ERR         Items_ItemType = 0
-	Items_TRX         Items_ItemType = 1
+	Items_SYM         Items_ItemType = 1
 	Items_BLOCK       Items_ItemType = 2
 	Items_BLOCKHEADER Items_ItemType = 3
 )
 
 var Items_ItemType_name = map[int32]string{
 	0: "ERR",
-	1: "TRX",
+	1: "SYM",
 	2: "BLOCK",
 	3: "BLOCKHEADER",
 }
 var Items_ItemType_value = map[string]int32{
 	"ERR":         0,
-	"TRX":         1,
+	"SYM":         1,
 	"BLOCK":       2,
 	"BLOCKHEADER": 3,
 }
@@ -405,7 +405,7 @@ type Account struct {
 	Type        AccountType `protobuf:"varint,2,opt,name=type,proto3,enum=protocol.AccountType" json:"type,omitempty"`
 	// the create address
 	Address []byte `protobuf:"bytes,3,opt,name=address,proto3" json:"address,omitempty"`
-	// the trx balance
+	// the sym balance
 	Balance int64 `protobuf:"varint,4,opt,name=balance,proto3" json:"balance,omitempty"`
 	// the votes
 	Votes []*Vote `protobuf:"bytes,5,rep,name=votes,proto3" json:"votes,omitempty"`
@@ -622,7 +622,7 @@ func (m *Account) GetLatestConsumeFreeTime() int64 {
 
 // frozen balance
 type Account_Frozen struct {
-	// the frozen trx balance
+	// the frozen sym balance
 	FrozenBalance int64 `protobuf:"varint,1,opt,name=frozen_balance,json=frozenBalance,proto3" json:"frozen_balance,omitempty"`
 	// the expire time
 	ExpireTime           int64    `protobuf:"varint,2,opt,name=expire_time,json=expireTime,proto3" json:"expire_time,omitempty"`
@@ -1905,7 +1905,7 @@ func (m *Inventory) GetType() Inventory_InventoryType {
 	if m != nil {
 		return m.Type
 	}
-	return Inventory_TRX
+	return Inventory_SYM
 }
 
 func (m *Inventory) GetIds() [][]byte {

@@ -1,4 +1,4 @@
-package: github.com/stabilaprotocol/grpc-gateway
+package: github.com/osiz-blockchainapp/grpc-gateway
 import:
 - package: github.com/go-resty/resty
 - package: github.com/golang/glog

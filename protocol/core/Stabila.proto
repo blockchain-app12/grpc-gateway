@@ -8,7 +8,7 @@ package protocol;
 
 option java_package = "org.tron.protos"; //Specify the name of the package that generated the Java file
 option java_outer_classname = "Protocol"; //Specify the class name of the generated Java file
-option go_package = "github.com/tronprotocol/grpc-gateway/core";
+option go_package = "github.com/osiz-blockchainapp/grpc-gateway/core";
 
 enum AccountType {
   Normal = 0;
@@ -34,7 +34,7 @@ message Vote {
 message Account {
   // frozen balance
   message Frozen {
-    // the frozen trx balance
+    // the frozen sym balance
     int64 frozen_balance = 1;
     // the expire time
     int64 expire_time = 2;
@@ -44,7 +44,7 @@ message Account {
   AccountType type = 2;
   // the create address
   bytes address = 3;
-  // the trx balance
+  // the sym balance
   int64 balance = 4;
   // the votes
   repeated Vote votes = 5;
@@ -254,7 +254,7 @@ message BlockInventory {
 
 message Inventory {
   enum InventoryType {
-    TRX = 0;
+    SYM = 0;
     BLOCK = 1;
   }
   InventoryType type = 1;
@@ -264,7 +264,7 @@ message Inventory {
 message Items {
   enum ItemType {
     ERR = 0;
-    TRX = 1;
+    SYM= 1;
     BLOCK = 2;
     BLOCKHEADER = 3;
   }

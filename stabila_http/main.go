@@ -11,7 +11,7 @@ import (
 	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 
-	gw "github.com/tronprotocol/grpc-gateway/api"
+	gw "github.com/osiz-blockchainapp/grpc-gateway/api"
 
 	"fmt"
 )
